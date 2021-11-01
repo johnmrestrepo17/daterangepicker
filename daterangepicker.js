@@ -462,7 +462,10 @@
 
             if (this.timePicker && this.timePickerIncrement)
                 this.startDate.minute(Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement);
-
+			
+			 if (this.singleDatePicker)
+                this.endDate = this.startDate.clone();
+			
             if (this.minDate && this.startDate.isBefore(this.minDate)) {
                 this.startDate = this.minDate.clone();
                 if (this.timePicker && this.timePickerIncrement)
